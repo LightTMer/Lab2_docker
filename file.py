@@ -9,7 +9,6 @@ else:
     image_path = "./image.png"
 
 
-
 image = cv2.imread(image_path)
 
 # Загружаем каскад для обнаружения лиц
@@ -30,13 +29,9 @@ if len(faces) > 0:
         cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)  # Красный цвет (BGR)
     
     # Сохраняем изображение с прямоугольниками
-    output_path = 'output_image.jpg'  # Укажите желаемое имя файла
+    output_path = 'output_image.jpg'  
     cv2.imwrite(output_path, image)
     print(f'Изображение сохранено как {output_path}')
     
-    # # Отображаем изображение с прямоугольниками
-    # cv2.imshow('Faces found', image)
-    # cv2.waitKey(0)  # Ждем нажатия клавиши
-    # cv2.destroyAllWindows()  # Закрываем все окна
 else:
     print('Лица не найдены.')
